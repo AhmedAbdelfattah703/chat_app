@@ -11,18 +11,18 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            const SizedBox(
-              height: 60,
+            
+            Image.asset('assets/images/scholar.png',height: 100,),
+            Center(
+              child: const Text(
+                'Our Chat',
+                style: TextStyle(fontSize: 32, fontFamily: "Pacifico"),
+              ),
             ),
-            Image.asset('assets/images/scholar.png'),
-            const Text(
-              'Our Chat',
-              style: TextStyle(fontSize: 32, fontFamily: "Pacifico"),
-            ),
             const SizedBox(
-              height: 60,
+              height: 20,
             ),
             const Row(
               children: [
@@ -50,6 +50,9 @@ class LoginPage extends StatelessWidget {
             CustomButton(
               TextName: 'LOGIN',
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
                 const Text("Don't have an account?"),
@@ -61,12 +64,15 @@ class LoginPage extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) {
-                      return const RegisterPage();
+                      return  RegisterPage();
                     }),
                   ),
                 )
               ],
-            )
+            ),
+            const SizedBox(
+              height: 70,
+            ),
           ],
         ),
       ),
